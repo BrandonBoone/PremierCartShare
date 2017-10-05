@@ -1,2 +1,3 @@
 # PremierCartShare
-Allows www.premierdesigns.com users to share their shopping cart with each other
+
+This extension allows premierdesigns.com users to share their shopping carts with each other
