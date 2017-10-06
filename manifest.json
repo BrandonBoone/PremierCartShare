@@ -1,6 +1,6 @@
 {
   "name": "Share My Style",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "manifest_version": 2,
   "description": "This extension allows www.premierdesigns.com users to share their shopping carts with each other",
   "homepage_url": "https://github.com/BrandonBoone/PremierCartShare/",
