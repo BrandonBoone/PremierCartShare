@@ -1,8 +1,12 @@
-const setDOMInfo = (values) => {
-    if(values) {
-        let data = values.reduce((prev, next) => prev ? `${prev}|${next}` : next, '');
-
-        window._ele.txtStyleId.innerText = `https://www.premierdesigns.com/JusSparkles/shopping-bag/?addToCart=${data}`;
+const setDOMInfo = (data) => {
+    if(data && data.values) {
+        const jewelryKey = data.values.reduce((prev, next) => prev ? `${prev}|${next}` : next, '');
+        const locationParts = data.location.split('/');
+        let userName = "JusSparkles";
+        if(locationParts.length > 1){
+            userName = locationParts[1];
+        }
+        window._ele.txtStyleId.innerText = `https://www.premierdesigns.com/${userName}/shopping-bag/?addToCart=${jewelryKey}`;
     }
 }
 

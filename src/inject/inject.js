@@ -32,8 +32,6 @@ chrome.runtime.onMessage.addListener(function (msg, sender, response) {
 	// First, validate the message's structure
 	if ((msg.from === 'popup') && (msg.subject === 'DOMInfo')) {
 		// Collect the necessary data 
-		// (For your specific requirements `document.querySelectorAll(...)`
-		//  should be equivalent to jquery's `$(...)`)
 		const nodes = document.querySelectorAll('[data-item-code]');
 		if(nodes && nodes.length > 0) {
 
@@ -42,7 +40,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, response) {
 				(node) => node.attributes.getNamedItem('data-item-code').nodeValue
 			);
 			// console.log(values);
-			response(values);
+			response({ values: values, location: window.location.pathname });
 		}
 		// Directly respond to the sender (popup), 
 		// through the specified callback */
